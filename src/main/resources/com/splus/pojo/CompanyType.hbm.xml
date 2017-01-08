@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.splus.pojo.CompanyType" table="company_type">
+		<id name="companyTypeId" column="COMPANYTYPEID">
+			<generator class="native"></generator>
+        </id>
+        <many-to-one name="company" class="com.splus.pojo.User" column="COMPANYID">
+        </many-to-one>
+        <many-to-one name="type" class="com.splus.pojo.Type" column="TYPEID">
+        </many-to-one>
+		<property name="suspendFlag" column="SUSPENDFLAG"/>	
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.splus.pojo.Department" table="department">
+		<id name="deptId" column="DEPTID">
+			<generator class="native"></generator>
+        </id>
+		<property name="deptName" column="DEPTNAME"/>
+		<property name="suspendFlag" column="SUSPENDFLAG"/>	
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.splus.pojo.Feedback" table="feedback">
+		<id name="regnId" column="REGNID">
+            <generator class="foreign">
+                <param name="property">regn</param>
+            </generator>
+        </id>
+        <one-to-one name="regn" class="com.splus.pojo.Registration">
+        </one-to-one>
+		<property name="feedback" column="FEEDBACK"/>
+	</class>
+</hibernate-mapping>

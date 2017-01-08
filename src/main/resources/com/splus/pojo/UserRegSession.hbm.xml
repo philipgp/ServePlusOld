@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.splus.pojo.UserRegSession" table="user_reg_session">
+		<id name="userName" column="USERNAME">
+            <generator class="foreign">
+                <param name="property">user</param>
+            </generator>
+        </id>
+        <one-to-one name="user" class="com.splus.pojo.User">
+        </one-to-one>
+        <property name="token" column="TOKEN"/>
+		<property name="emailCode" column="EMAILCODE"/>
+		<property name="expiryDate" column="EXPIRY_DATE"/>
+	</class>
+</hibernate-mapping>

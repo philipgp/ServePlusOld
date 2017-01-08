@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.splus.pojo.RegnHistory" table="regn_history">
+		<id name="regnHistoryId" column="REGN_HISTORY_ID">
+        </id>
+        <many-to-one name="regn" class="com.splus.pojo.Registration" column="REGNID">
+        </many-to-one>
+        <many-to-one name="status" class="com.splus.pojo.RegnStatus" column="STATUSID">
+        </many-to-one>
+		<property name="time" column="TIMESTAMP"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:websocket="http://www.springframework.org/schema/websocket"       
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                           http://www.springframework.org/schema/websocket
+                           http://www.springframework.org/schema/websocket/spring-websocket-4.0.xsd">
+                           
+       <mvc:annotation-driven>
+       </mvc:annotation-driven>
+       <context:component-scan base-package="com.splus"/>
+       <context:annotation-config/> 
+       <!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        	<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+         	<property name="url" value="jdbc:mysql://127.0.0.1:3306/splus_schema_new" />
+        	<property name="username" value="root" />
+        	<property name="password" value="root" />
+       </bean> -->
+      <!--  <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        	<property name="dataSource" ref="dataSource"/>
+        	<property name="mappingLocations">
+            	<list>
+                	<value>classpath:com/splus/pojo/User.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/Role.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/Department.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/Type.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/Registration.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/RegnStatus.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/UserSession.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/WorkerType.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/CompanyType.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/CompanyVoucher.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/UserCompany.hbm.xml</value>               	
+                	<value>classpath:com/splus/pojo/CompanyType.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/UserRegSession.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/ForgotUser.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/RegnHistory.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/Feedback.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/RatingQuestion.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/Rating.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/NotificationKey.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/Notification.hbm.xml</value>
+                	<value>classpath:com/splus/pojo/HostProp.hbm.xml</value>
+            	</list>
+        	</property>
+        	<property name="hibernateProperties">
+            	<props>
+                	<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+	   				<prop key="hibernate.hbm2ddl.auto">update</prop>
+	   				<prop key="hibernate.show_sql">true</prop>
+            	</props>
+        	</property>
+       </bean> -->
+       <!-- <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        	<property name="sessionFactory" ref="sessionFactory"/>
+       </bean>
+       <tx:advice id="txAdvice" transaction-manager="transactionManager">
+       		<tx:attributes>
+            	<tx:method name="*"/>
+        	</tx:attributes>
+       </tx:advice>
+       <aop:config>
+        	<aop:pointcut id="eviOperation"
+        				  expression="execution(* com.splus.service.LoginService.*(..))
+        				  ||execution(* com.splus.service.GetDetails.*(..))
+        				  ||execution(* com.splus.service.RegisterService.*(..))
+        				  ||execution(* com.splus.service.UserRegService.*(..))
+        				  ||execution(* com.splus.service.PutDetails.*(..))"/>
+        	<aop:advisor advice-ref="txAdvice" pointcut-ref="eviOperation"/>
+        </aop:config>
+        
+        
+         -->
+        
+        <!--
+        <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	        <property name="host" value="mail.serveplus.net" />
+	        <property name="port" value="587" />
+	        <property name="username" value="registration@serveplus.net" />
+	        <property name="password" value="serveregister123$%^" />
+	        <property name="javaMailProperties">        
+		        <props>
+		            <prop key="mail.transport.protocol">smtp</prop>
+		            <prop key="mail.smtp.auth">true</prop>
+		            <prop key="mail.smtp.starttls.enable">true</prop>
+		        </props>       
+	        </property>        
+        </bean>        
+         -->
+        
+        
+        <bean id="velocityEngine" class="org.apache.velocity.app.VelocityEngine">
+	        
+        </bean>
+        
+        
+       <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+       		<property name="maxUploadSize" value="268435456"/> 
+       </bean>
+        
+        <bean id="authdao" class="com.splus.dao.AuthDaoImp">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+        <bean id="regndao" class="com.splus.dao.RegDetailsDaoImp">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+        <bean id="servicedao" class="com.splus.dao.ServiceDetailDaoImp">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+        <bean id="userregdao" class="com.splus.dao.UserRegDaoImp">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+        <bean id="notdao" class="com.splus.dao.NotificationDaoImp">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+		
+		<!-- Service -->
+		
+		<bean id="loginservice" class="com.splus.service.LoginServiceImp">
+			<property name="authDao" ref="authdao"></property>
+			<property name="velocityEngine" ref="velocityEngine"></property>
+		</bean>
+		<bean id="getservice" class="com.splus.service.GetDetailsImp">
+			<property name="regnDao" ref="regndao"></property>
+			<property name="serviceDao" ref="servicedao"></property>
+			<property name="notDao" ref="notdao"></property>
+		</bean>
+		<bean id="regservice" class="com.splus.service.RegisterServiceImp">
+			<property name="regnDao" ref="regndao"></property>
+			<property name="wsService" ref="websocketservice"></property>
+			<property name="serviceDao" ref="servicedao"></property>
+			<property name="authDao" ref="authdao"></property>
+			<property name="notDao" ref="notdao"></property>
+		</bean>
+		<bean id="userregservice" class="com.splus.service.UserRegServiceImp">
+			<property name="userRegDao" ref="userregdao"></property>
+			<property name="authDao" ref="authdao"></property>
+			<property name="velocityEngine" ref="velocityEngine"></property>
+		</bean>		
+		<bean id="putservice" class="com.splus.service.PutDetailsImp">
+			<property name="serviceDao" ref="servicedao"></property>
+		</bean>
+		<!-- WebSocket -->
+		
+		<bean id="websocketservice" class="com.splus.websocket.WebSocketServiceImp">
+		</bean>
+		<bean id="websocket" class="com.splus.websocket.WebsocketEndPoint">
+		    <property name="loginService" ref="loginservice"></property>
+		    <property name="wsService" ref="websocketservice"></property>
+		</bean>
+		<websocket:handlers>
+		  <websocket:mapping path="/splussocket" handler="websocket"/>
+		  <websocket:handshake-interceptors>
+		    <bean class="com.splus.websocket.HandshakeInterceptor"/>
+		  </websocket:handshake-interceptors>
+		</websocket:handlers>
+		
+</beans>

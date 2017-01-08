@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.splus.pojo.Registration" table="registration">
+		<id name="regnId" column="REGNID">
+        </id>	
+        <many-to-one name="user" class="com.splus.pojo.User" column="USERID">
+        </many-to-one>
+        <many-to-one name="type" class="com.splus.pojo.Type" column="TYPEID">
+        </many-to-one>
+		<property name="timestamp" column="DATE"/>
+		<property name="preferedTime" column="PREFERED_TIME"/>
+		<property name="userComment" column="USERCOMMENT"/>
+		<property name="latitude" column="LATITUDE"/>
+		<property name="longitude" column="LONGITUDE"/>
+		<property name="location" column="LOCATION"/>		
+		<property name="localAddress" column="LOCAL_ADDRESS"/>
+        <many-to-one name="assignedTo" class="com.splus.pojo.User" column="WORKERID">
+        </many-to-one>
+		<property name="payment" column="PAYMENT"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>ServePlusServer</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>dispatcher</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <context-param>
+    <param-name>baseIp</param-name>
+    <param-value>http://202.191.65.179:8090/ServePlusServer/</param-value>
+  </context-param>
+  <context-param>
+    <param-name>proPicDir</param-name>
+    <param-value>/home/ramanujan/Development/apache-tomcat-7.0.55/webapps/SPlusProPic/</param-value>
+  </context-param>
+  <context-param>
+    <param-name>proPicPath</param-name>
+    <param-value>http://202.191.65.179:8090/SPlusProPic/</param-value>
+  </context-param>
+  <context-param>
+    <param-name>imageDir</param-name>
+    <param-value>/home/ramanujan/Development/apache-tomcat-7.0.55/webapps/SPlusImage/</param-value>
+  </context-param>
+  <context-param>
+    <param-name>imagePath</param-name>
+    <param-value>http://202.191.65.179:8090/SPlusImage/</param-value>
+  </context-param>
+  <servlet-mapping>
+    <servlet-name>dispatcher</servlet-name>
+    <url-pattern>/splus/*</url-pattern>
+  </servlet-mapping>
+  <listener>
+    <listener-class>com.splus.subservice.ListenerClass</listener-class>
+  </listener>
+  <session-config>
+    <session-timeout>-1</session-timeout>
+  </session-config>
+</web-app>

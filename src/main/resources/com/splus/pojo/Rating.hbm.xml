@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.splus.pojo.Rating" table="rating">
+		<id name="ratingId" column="RATINGID">
+        </id>	
+        <many-to-one name="regn" class="com.splus.pojo.Registration" column="REGN_ID">
+        </many-to-one>
+        <many-to-one name="ratingQn" class="com.splus.pojo.RatingQuestion" column="RATING_QN_ID">
+        </many-to-one>
+		<property name="rating" column="RATING"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.splus.pojo.Notification" table="notification">
+		<id name="notifId" column="NOTIFID">
+        </id>	
+        <many-to-one name="notifKey" class="com.splus.pojo.NotificationKey"
+        			 column="NOTIF_KEY_ID">
+        </many-to-one>
+        <many-to-one name="user" class="com.splus.pojo.User"
+        			 column="USERNAME">
+        </many-to-one>
+		<property name="notifJson" column="NOTIF_JSON" type="text"/>
+		<property name="timestamp" column="TIMESTAMP"/>
+		<property name="readFlag" column="READFLAG"/>
+	</class>
+</hibernate-mapping>
