@@ -1,5 +1,4 @@
-*.bin
-.gradle/2.2.1/taskArtifacts/cache.properties
-.gradle/2.2.1/taskArtifacts/cache.properties.lock
-.gradle/3.0/taskArtifacts/cache.properties.lock
-.gradle/3.0/taskArtifacts/cache.properties
+*.class
+build/*
+bin/*
+.gradle/*

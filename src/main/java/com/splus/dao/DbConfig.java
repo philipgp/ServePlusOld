@@ -18,7 +18,7 @@ public class DbConfig {
 	public DataSource dataSource(){
 		DriverManagerDataSource dmDS = new DriverManagerDataSource();
 		dmDS.setDriverClassName("com.mysql.jdbc.Driver");
-		dmDS.setUrl("jdbc:mysql://127.0.0.1:3306/sys");
+		dmDS.setUrl("jdbc:mysql://127.0.0.1:3306/serveplus");
 		dmDS.setUsername("root");
 		dmDS.setPassword("MyNewPass");
 		return dmDS;
@@ -30,6 +30,8 @@ public class DbConfig {
 		Properties hibernateProperties= new Properties();
 		hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
 		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "auto");
+		//hibernateProperties.setProperty("hibernate.current_session_context_class", "thread");
+		
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		sessionFactory.setHibernateProperties(hibernateProperties);
 		String mappingResources;

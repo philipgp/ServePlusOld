@@ -6,7 +6,7 @@ public class WorkerType {
 	private User user;
 	private Type type;
 	private User company;
-	private boolean suspendFlag;
+	private Boolean suspendFlag;
 	
 	public WorkerType(){}
 
@@ -42,11 +42,11 @@ public class WorkerType {
 		this.company = company;
 	}
 
-	public boolean isSuspendFlag() {
+	public Boolean isSuspendFlag() {
 		return suspendFlag;
 	}
 
-	public void setSuspendFlag(boolean suspendFlag) {
+	public void setSuspendFlag(Boolean suspendFlag) {
 		this.suspendFlag = suspendFlag;
 	}
 
